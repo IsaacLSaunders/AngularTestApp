@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
   //HeroesComponent was auto imported into the app module when we used the Angluar CLI to declare the component
   //When you use the CLI to create a component it auto imports to the parent component
   //it also auto adds HeroesComponent to the declarations array below 
@@ -15,7 +17,9 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent
   ],
   //the imports array contains all external modules that the app needs
   imports: [
