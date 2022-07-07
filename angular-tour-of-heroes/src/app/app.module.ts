@@ -13,20 +13,30 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   //When you use the CLI to create a component it auto imports to the parent component
   //it also auto adds HeroesComponent to the declarations array below 
 
+  import { HttpClientModule } from '@angular/common/http';
+  import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+  import { InMemoryDataService } from './in-memory-data.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   //the imports array contains all external modules that the app needs
   imports: [
     BrowserModule,
     FormsModule,
     //Must add FormsModule to NgModule metadata
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
